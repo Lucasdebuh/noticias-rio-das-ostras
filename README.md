@@ -1,47 +1,133 @@
-# Notícias Rio das Ostras
+# 🌊 Notícias Rio das Ostras
 
-Um repositório dedicado a organizar e compartilhar notícias sobre Rio das Ostras, RJ.
+Portal moderno de notícias dedicado a trazer as principais informações sobre Rio das Ostras e região.
 
-## Descrição
+## 📋 Características
 
-Este projeto foi criado para centralizar informações, artigos e dados relevantes sobre a cidade de Rio das Ostras, facilitando o acesso e a organização do conteúdo.
+- ✨ **Interface Responsiva** - Otimizado para desktop, tablet e mobile
+- 🔍 **Busca em Tempo Real** - Filtre notícias instantaneamente
+- 🏷️ **Categorias** - Política, Cultura, Turismo, Esportes
+- 📱 **Feed Dinâmico** - Carrega notícias do arquivo `feed-data.json`
+- 🌙 **Modo Escuro** - Suporte completo a temas claro e escuro
+- ⚡ **Performance** - Página leve e rápida
 
-## Estrutura do Projeto
+## 📁 Estrutura do Projeto
 
 ```
 noticias-rio-das-ostras/
-├── artigos/          # Arquivos e textos de artigos
-├── imagens/          # Imagens e mídias visuais
-├── dados/            # Dados e informações estruturadas
-├── README.md         # Este arquivo
-└── .gitignore        # Configuração de arquivos ignorados pelo Git
+├── index.html          # Página principal
+├── feed-data.json      # Dados das notícias
+└── README.md          # Este arquivo
 ```
 
-## Como Usar
+## 🚀 Como Usar
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/Lucasdebuh/noticias-rio-das-ostras.git
-   ```
+### Visualizar Online
+1. Abra `index.html` em um navegador web
+2. O site carregará automaticamente as notícias de `feed-data.json`
 
-2. Navegue até o diretório:
-   ```bash
-   cd noticias-rio-das-ostras
-   ```
+### Estrutura do Feed Data
 
-3. Comece a adicionar conteúdo nas pastas apropriadas:
-   - Artigos em `/artigos`
-   - Imagens em `/imagens`
-   - Dados em `/dados`
+O arquivo `feed-data.json` contém:
 
-## Contribuindo
+```json
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "ISO-8601 timestamp",
+    "sources": [
+      {
+        "name": "Nome da Fonte",
+        "url": "https://instagram.com/...",
+        "postsCollected": 5
+      }
+    ]
+  },
+  "feed": [
+    {
+      "id": "id_unico",
+      "source": "Rio das Ostras 24H",
+      "source_url": "https://www.instagram.com/riodasostras24h/",
+      "title": "Título da Notícia",
+      "description": "Descrição breve",
+      "date": "ISO-8601 timestamp",
+      "category": "politica|cultura|turismo|esportes",
+      "original_post": "https://instagram.com/p/..."
+    }
+  ],
+  "statistics": {
+    "totalPosts": 12,
+    "byCategory": {...},
+    "bySource": {...}
+  }
+}
+```
 
-Sinta-se livre para contribuir com novos artigos, imagens e dados sobre Rio das Ostras. Certifique-se de organizá-los nas pastas corretas.
+## 📚 Fontes de Notícias
 
-## Autor
+As notícias são coletadas de:
+- [Rio das Ostras 24H](https://www.instagram.com/riodasostras24h/)
+- [Germano Junior](https://www.instagram.com/germanojunior343/)
+- [LP News Portal Oficial](https://www.instagram.com/lpnewsportaloficial/)
 
-Lucasdebuh
+Todos os créditos e links originais são preservados em cada notícia.
 
-## Licença
+## 🎨 Design
 
-Este projeto está sob licença MIT.
+- **Paleta de Cores**: Inspirada na identidade costeira de Rio das Ostras
+  - Azul Oceano: `#0F4C75`
+  - Laranja Coral: `#E67E22`
+  - Neutro Claro: `#F5F1E8`
+
+- **Tipografia**:
+  - Display: Playfair Display (títulos)
+  - Body: Inter (conteúdo)
+  - Mono: Roboto Mono (datas e dados)
+
+## 🔧 Desenvolvimento
+
+### Adicionar Novas Notícias
+
+1. Edite `feed-data.json`
+2. Adicione um novo objeto na array `feed`
+3. Mantenha o mesmo formato e estrutura
+4. As notícias são ordenadas automaticamente por data (mais recentes primeiro)
+
+### Filtros Disponíveis
+
+- **Todas** - Mostra todas as notícias
+- **Política** - Notícias sobre política e governo
+- **Cultura** - Eventos culturais e artísticos
+- **Turismo** - Informações turísticas
+- **Esportes** - Eventos esportivos
+
+## 📝 Atualização do Feed
+
+Para atualizar o feed com novas notícias:
+
+1. Acesse as fontes do Instagram
+2. Colete os posts públicos mais recentes
+3. Estruture os dados conforme `feed-data.json`
+4. Preserve os créditos e links originais
+5. Ordene do mais recente para o mais antigo
+
+## 🌐 Compatibilidade
+
+- ✅ Chrome/Edge (última versão)
+- ✅ Firefox (última versão)
+- ✅ Safari (última versão)
+- ✅ Mobile browsers (iOS/Android)
+
+## 📄 Licença
+
+Este projeto é de código aberto. Créditos às fontes originais são preservados em cada notícia.
+
+## 👤 Autor
+
+Lucas Moreira Marini - [GitHub](https://github.com/Lucasdebuh)
+
+---
+
+**Última atualização**: 31 de agosto de 2026
+**Notícias no feed**: 12
+**Fontes ativas**: 3
