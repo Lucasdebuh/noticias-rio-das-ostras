@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notícias Rio das Ostras</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Roboto+Mono:wght@400;500&display=swap">
+    <style>
+        :root {
+            --primary: #0F4C75;
+            --primary-dark: #082540;
+            --primary-light: #1a6fa0;
+            --accent: #E67E22;
+            --accent-light: #f39c12;
+            --neutral-light: #F5F1E8;
+            --neutral-medium: #D4CFC0;
+            --neutral-dark: #6B7280;
+            --text-primary: #1F2937;
+            --text-secondary: #6B7280;
+            --surface: #FFFFFF;
+            --border: #E5E7EB;
+            --success: #10B981;
+            --info: #3B82F6;
+            --warning: #F59E0B;
+
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --font-mono: 'Roboto Mono', monospace;
+
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.15);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) {
+                --primary: #1a7fb8;
+                --primary-dark: #0F4C75;
+                --primary-light: #2d9dd6;
+                --accent: #f39c12;
+                --neutral-light: #1F2937;
+                --neutral-medium: #374151;
+                --text-primary: #F3F4F6;
+                --text-secondary: #D1D5DB;
+                --surface: #111827;
+                --border: #374151;
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --primary: #1a7fb8;
+            --primary-dark: #0F4C75;
+            --primary-light: #2d9dd6;
+            --accent: #f39c12;
+            --neutral-light: #1F2937;
+            --neutral-medium: #374151;
+            --text-primary: #F3F4F6;
+            --text-secondary: #D1D5DB;
+            --surface: #111827;
+            --border: #374151;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background: var(--surface);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            font-family: var(--font-display);
+            text-decoration: none;
+            color: white;
+        }
+
+        .logo::before {
+            content: "🌊";
+            font-size: 1.75rem;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1a6fa0 100%);
+            color: white;
+            padding: 5rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            text-wrap: balance;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            text-wrap: balance;
+        }
+
+        /* Search and Filters */
+        .controls {
+            max-width: 1200px;
+            margin: -2rem auto 3rem;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 1.5rem;
+            align-items: end;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.875rem 1rem 0.875rem 2.75rem;
+            border: 2px solid var(--border);
+            border-radius: 0.5rem;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
+            background: var(--surface);
+            color: var(--text-primary);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .search-box::before {
+            content: "🔍";
+            position: absolute;
+            left: 0.875rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.25rem;
+        }
+
+        .filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.25rem;
+            border: 2px solid var(--border);
+            background: var(--surface);
+            color: var(--text-primary);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
+
+        /* Featured Articles */
+        .featured {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .featured-card {
+            background: var(--surface);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .featured-card-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .featured-card-content {
+            padding: 1.5rem;
+        }
+
+        .card-category {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.25rem;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        .featured-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .featured-card p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* News Grid */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .news-card {
+            background: var(--surface);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .news-card-image {
+            width: 100%;
+            height: 160px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            color: rgba(255, 255, 255, 0.3);
+        }
+
+        .news-card-content {
+            padding: 1.25rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .news-card h4 {
+            font-family: var(--font-display);
+            font-size: 1.125rem;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+
+        .news-card p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            flex-grow: 1;
+            line-height: 1.5;
+        }
+
+        .news-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .read-more {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .read-more:hover {
+            color: var(--accent);
+        }
+
+        /* Stats Section */
+        .stats {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 4rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .stat {
+            font-family: var(--font-display);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-family: var(--font-body);
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 3rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .controls {
+                grid-template-columns: 1fr;
+            }
+
+            .filters {
+                justify-content: flex-start;
+            }
+
+            nav {
+                flex-basis: 100%;
+                order: 3;
+                gap: 1rem;
+            }
+
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .featured {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo">Rio das Ostras</a>
+            <nav>
+                <a href="#noticias">Notícias</a>
+                <a href="#categorias">Categorias</a>
+                <a href="#contato">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Notícias de Rio das Ostras</h1>
+            <p>Fique por dentro dos acontecimentos mais importantes da nossa cidade</p>
+        </div>
+    </section>
+
+    <!-- Controls -->
+    <div class="controls">
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Buscar notícias...">
+        </div>
+        <div class="filters">
+            <button class="filter-btn active" data-filter="todos">Todas</button>
+            <button class="filter-btn" data-filter="politica">Política</button>
+            <button class="filter-btn" data-filter="cultura">Cultura</button>
+            <button class="filter-btn" data-filter="turismo">Turismo</button>
+            <button class="filter-btn" data-filter="esportes">Esportes</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Featured Section -->
+        <section id="noticias">
+            <h2 class="section-title">Destaques</h2>
+            <div class="featured">
+                <article class="featured-card" data-category="politica">
+                    <div class="featured-card-image">🏛️</div>
+                    <div class="featured-card-content">
+                        <span class="card-category">Política</span>
+                        <h3>Câmara aprova novo projeto de mobilidade urbana</h3>
+                        <p>A câmara municipal aprovou hoje um importante projeto que visa modernizar o transporte público da cidade.</p>
+                        <div class="card-meta">
+                            <span>31 ago 2024</span>
+                            <a href="#" class="read-more">Leia mais →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="featured-card" data-category="turismo">
+                    <div class="featured-card-image">🌴</div>
+                    <div class="featured-card-content">
+                        <span class="card-category">Turismo</span>
+                        <h3>Temporada de verão promete bom fluxo turístico</h3>
+                        <p>Com a chegada do verão, Rio das Ostras se prepara para receber milhares de visitantes em suas praias.</p>
+                        <div class="card-meta">
+                            <span>30 ago 2024</span>
+                            <a href="#" class="read-more">Leia mais →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="featured-card" data-category="cultura">
+                    <div class="featured-card-image">🎭</div>
+                    <div class="featured-card-content">
+                        <span class="card-category">Cultura</span>
+                        <h3>Festival de Arte e Música traz atrações internacionais</h3>
+                        <p>O maior festival cultural do ano chega com uma programação diversificada e artistas de renome internacional.</p>
+                        <div class="card-meta">
+                            <span>29 ago 2024</span>
+                            <a href="#" class="read-more">Leia mais →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="stats">
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">125+</div>
+                    <div class="stat-label">Notícias por mês</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">50K+</div>
+                    <div class="stat-label">Leitores mensais</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Categorias</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Atualizado sempre</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Grid -->
+        <section id="categorias">
+            <h2 class="section-title">Todas as Notícias</h2>
+            <div class="news-grid" id="newsGrid">
+                <!-- Notícias carregadas dinamicamente a partir do feed-data.json -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contato">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Sobre Nós</h3>
+                <p>Portal de notícias dedicado a trazer as principais informações sobre Rio das Ostras e região.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Categorias</h3>
+                <ul>
+                    <li><a href="#">Política</a></li>
+                    <li><a href="#">Cultura</a></li>
+                    <li><a href="#">Turismo</a></li>
+                    <li><a href="#">Esportes</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contato</h3>
+                <ul>
+                    <li><a href="mailto:contato@noticiasrio.com">contato@noticiasrio.com</a></li>
+                    <li><a href="tel:+552127000000">(21) 2700-0000</a></li>
+                    <li>Rua das Ostras, 100<br>Rio das Ostras, RJ</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Notícias Rio das Ostras. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        let feedData = null;
+
+        // Carregar dados do feed
+        async function loadFeed() {
+            try {
+                // Tenta carregar o arquivo feed-data.json
+                const response = await fetch('feed-data.json');
+                if (response.ok) {
+                    feedData = await response.json();
+                    renderNews();
+                } else {
+                    console.warn('Feed data não encontrado, usando dados padrão');
+                    loadDefaultNews();
+                }
+            } catch (error) {
+                console.warn('Erro ao carregar feed:', error);
+                loadDefaultNews();
+            }
+        }
+
+        // Renderizar notícias do feed
+        function renderNews() {
+            if (!feedData || !feedData.feed) return;
+
+            const newsGrid = document.getElementById('newsGrid');
+            newsGrid.innerHTML = '';
+
+            // Ordena do mais recente para o mais antigo
+            const sortedPosts = feedData.feed.sort((a, b) =>
+                new Date(b.date) - new Date(a.date)
+            );
+
+            sortedPosts.forEach(post => {
+                const article = createNewsCard(post);
+                newsGrid.appendChild(article);
+            });
+
+            setupEventListeners();
+        }
+
+        // Criar card de notícia
+        function createNewsCard(post) {
+            const article = document.createElement('article');
+            article.className = 'news-card';
+            article.dataset.category = post.category;
+            article.style.transition = 'opacity 0.3s ease';
+
+            const iconMap = {
+                'politica': '📢',
+                'cultura': '🎨',
+                'turismo': '🏖️',
+                'esportes': '⚽',
+                'outro': '📰'
+            };
+
+            const icon = iconMap[post.category] || '📰';
+            const date = new Date(post.date);
+            const dateFormatted = date.toLocaleDateString('pt-BR', {
+                day: 'numeric',
+                month: 'short',
+                hour: '2-digit',
+                minute: '2-digit'
+            });
+
+            article.innerHTML = `
+                <div class="news-card-image">${icon}</div>
+                <div class="news-card-content">
+                    <h4>${post.title}</h4>
+                    <p>${post.description}</p>
+                    <div class="news-card-footer">
+                        <span>${dateFormatted}</span>
+                        <a href="${post.original_post}" class="read-more" target="_blank" rel="noopener noreferrer">Ler →</a>
+                    </div>
+                </div>
+            `;
+
+            return article;
+        }
+
+        // Dados padrão de fallback
+        function loadDefaultNews() {
+            const defaultFeed = {
+                feed: [
+                    {
+                        id: 'default_001',
+                        title: 'Notícias de Rio das Ostras',
+                        description: 'Fique por dentro dos principais acontecimentos da cidade',
+                        category: 'politica',
+                        date: new Date().toISOString(),
+                        original_post: '#'
+                    }
+                ]
+            };
+            feedData = defaultFeed;
+            renderNews();
+        }
+
+        // Setup de event listeners
+        function setupEventListeners() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const newsCards = document.querySelectorAll('.news-card, .featured-card');
+            const searchInput = document.getElementById('searchInput');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.dataset.filter;
+
+                    newsCards.forEach(card => {
+                        if (filterValue === 'todos' || card.dataset.category === filterValue) {
+                            card.style.display = '';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            searchInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase();
+
+                newsCards.forEach(card => {
+                    const title = card.querySelector('h4, h3').textContent.toLowerCase();
+                    const description = card.querySelector('p').textContent.toLowerCase();
+
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = '';
+                        card.style.opacity = '1';
+                    } else {
+                        card.style.opacity = '0';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        }
+
+        // Inicializar quando o DOM estiver pronto
+        document.addEventListener('DOMContentLoaded', loadFeed);
+    </script>
+</body>
+</html>
