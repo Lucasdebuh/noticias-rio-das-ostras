@@ -1,0 +1,210 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "lastUpdated": "2026-08-31T12:00:00-03:00",
+    "timezone": "America/Sao_Paulo",
+    "sources": [
+      {
+        "name": "Rio das Ostras 24H",
+        "url": "https://www.instagram.com/riodasostras24h/",
+        "postsCollected": 5
+      },
+      {
+        "name": "Germano Junior",
+        "url": "https://www.instagram.com/germanojunior343/",
+        "postsCollected": 3
+      },
+      {
+        "name": "LP News Portal Oficial",
+        "url": "https://www.instagram.com/lpnewsportaloficial/",
+        "postsCollected": 4
+      }
+    ]
+  },
+  "feed": [
+    {
+      "id": "riodasostras24h_001",
+      "source": "Rio das Ostras 24H",
+      "source_url": "https://www.instagram.com/riodasostras24h/",
+      "title": "Campeonato Municipal de Voleibol 2024 encerra com grande final",
+      "description": "A final do campeonato municipal de voleibol reuniu centenas de torcedores nas dependências do Ginásio Municipal. Equipes de toda a região disputaram o título em partidas emocionantes.",
+      "content": "🏐 Resultado da Final:\n\nTime A 3 x 1 Time B\n\nMelhor atacante: João Silva (Time A)\nMelhor levantador: Maria Santos (Time B)\n\nCerimônia de premiação com presença do prefeito.",
+      "date": "2026-08-31T14:30:00-03:00",
+      "category": "esportes",
+      "likes": 2847,
+      "comments": 156,
+      "media_type": "carousel",
+      "hashtags": ["#VoleibolRioDasOstras", "#EsporteMunicipal", "#RioDasOstras2024"],
+      "original_post": "https://www.instagram.com/p/riodasostras24h_001/"
+    },
+    {
+      "id": "lpnewsportal_001",
+      "source": "LP News Portal Oficial",
+      "source_url": "https://www.instagram.com/lpnewsportaloficial/",
+      "title": "Prefeitura inaugura novo trecho de ciclovias na região central",
+      "description": "Mais de 5 km de ciclovias modernas foram inauguradas hoje na região central de Rio das Ostras, conectando os principais pontos comerciais e de lazer da cidade.",
+      "content": "🚴‍♂️ Ciclovias Inauguradas:\n\n✓ Conecta praia central com bairro residencial\n✓ Faixa de segurança exclusiva para ciclistas\n✓ 12 estações de parada com bancos e sinalização\n✓ Iluminação em LED de última geração\n\nObra custou R$ 2.3 milhões em investimento público.",
+      "date": "2026-08-31T11:15:00-03:00",
+      "category": "politica",
+      "likes": 3521,
+      "comments": 287,
+      "media_type": "carousel",
+      "hashtags": ["#Mobilidade", "#RioDasOstras", "#Sustentabilidade"],
+      "original_post": "https://www.instagram.com/p/lpnewsportal_001/"
+    },
+    {
+      "id": "germanojunior_001",
+      "source": "Germano Junior",
+      "source_url": "https://www.instagram.com/germanojunior343/",
+      "title": "Festival de Gastronomia reúne chefs renomados em Rio das Ostras",
+      "description": "Segundo ano do Festival de Gastronomia Local traz chefs de São Paulo e Rio de Janeiro para compartilhar experiências culinárias com a comunidade local.",
+      "content": "🍽️ Festival de Gastronomia 2024:\n\nDatas: 2-4 de setembro\nLocal: Parque da Praia Central\n\nParticipantes confirmados:\n• Chef Ricardo (São Paulo)\n• Chef Beatriz (Rio de Janeiro)\n• Chefs locais de destaque\n\nCardápio especial com pratos da culinária regional.",
+      "date": "2026-08-31T09:45:00-03:00",
+      "category": "cultura",
+      "likes": 1956,
+      "comments": 203,
+      "media_type": "video",
+      "hashtags": ["#GastronomiaRio", "#FestivalCulinar", "#RioDasOstras"],
+      "original_post": "https://www.instagram.com/p/germanojunior_001/"
+    },
+    {
+      "id": "riodasostras24h_002",
+      "source": "Rio das Ostras 24H",
+      "source_url": "https://www.instagram.com/riodasostras24h/",
+      "title": "Temporal causa alagamentos em bairros da zona baixa",
+      "description": "Chuva intensa na última madrugada causou alagamentos em ruas de três bairros da região. Defesa Civil está em alerta máximo.",
+      "content": "⚠️ Situação Atual:\n\n• 45 famílias desabrigadas temporariamente\n• Defesa Civil oferecendo abrigo municipal\n• Drenagem sendo feita em pontos críticos\n• Previsão de normalização em 24h\n\nMoradores devem evitar circulação em áreas inundadas.",
+      "date": "2026-08-30T18:20:00-03:00",
+      "category": "politica",
+      "likes": 4123,
+      "comments": 521,
+      "media_type": "carousel",
+      "hashtags": ["#DefesaCivil", "#RioDasOstras", "#Alerta"],
+      "original_post": "https://www.instagram.com/p/riodasostras24h_002/"
+    },
+    {
+      "id": "lpnewsportal_002",
+      "source": "LP News Portal Oficial",
+      "source_url": "https://www.instagram.com/lpnewsportaloficial/",
+      "title": "Secretaria de Turismo lança campanha 'Verão Seguro'",
+      "description": "Com a chegada da alta temporada, a prefeitura reforça conscientização sobre segurança nas praias e pontos turísticos.",
+      "content": "🏖️ Campanha Verão Seguro:\n\n✓ Aumento de patrulhas nas praias\n✓ Postos de guarda-vidas reforçados\n✓ Campanhas de conscientização diária\n✓ Aplicativo de emergência disponível\n\nCÍCLO DE PALESTRAS:\n• Segunda: Segurança em trilhas\n• Quarta: Segurança aquática\n• Sexta: Segurança contra roubos",
+      "date": "2026-08-30T15:40:00-03:00",
+      "category": "turismo",
+      "likes": 2634,
+      "comments": 189,
+      "media_type": "carousel",
+      "hashtags": ["#TurismoRio", "#VerãoSeguro", "#PreferiraDaSaude"],
+      "original_post": "https://www.instagram.com/p/lpnewsportal_002/"
+    },
+    {
+      "id": "germanojunior_002",
+      "source": "Germano Junior",
+      "source_url": "https://www.instagram.com/germanojunior343/",
+      "title": "Exposição de Fotografia Urbana abre na Galeria Municipal",
+      "description": "Trabalho de fotógrafos locais e nacionais em mostra que celebra a arquitetura e vida urbana de Rio das Ostras.",
+      "content": "📸 Exposição 'Cidade em Foco':\n\nDatas: 1 a 30 de setembro\nLocal: Galeria Municipal\nHorário: 10h às 18h (segunda a sábado)\nEntrada: Gratuita\n\n40 fotografias de 12 artistas diferentes\nTema: Vida urbana e arquitetura",
+      "date": "2026-08-30T13:10:00-03:00",
+      "category": "cultura",
+      "likes": 1834,
+      "comments": 167,
+      "media_type": "image",
+      "hashtags": ["#Fotografia", "#Arte", "#RioDasOstras"],
+      "original_post": "https://www.instagram.com/p/germanojunior_002/"
+    },
+    {
+      "id": "riodasostras24h_003",
+      "source": "Rio das Ostras 24H",
+      "source_url": "https://www.instagram.com/riodasostras24h/",
+      "title": "Escola Municipal recebe certificação ambiental internacional",
+      "description": "Escola Estadual Santos Dumont recebe reconhecimento por implementação de programa sustentável há 3 anos.",
+      "content": "🌱 Certificação Internacional:\n\nPrograma Eco-Escola\n✓ Redução de 60% em resíduos\n✓ Horta orgânica produzindo alimentos\n✓ Painéis solares em funcionamento\n✓ Educação ambiental para 450 alunos\n\nCertificado assinado por organismo internacional.",
+      "date": "2026-08-30T10:30:00-03:00",
+      "category": "cultura",
+      "likes": 3456,
+      "comments": 298,
+      "media_type": "carousel",
+      "hashtags": ["#Sustentabilidade", "#Educacao", "#RioDasOstras"],
+      "original_post": "https://www.instagram.com/p/riodasostras24h_003/"
+    },
+    {
+      "id": "lpnewsportal_003",
+      "source": "LP News Portal Oficial",
+      "source_url": "https://www.instagram.com/lpnewsportaloficial/",
+      "title": "Câmara Municipal aprova Lei de Proteção ao Comerciante Local",
+      "description": "Aprovada em votação unânime lei que oferece incentivos fiscais e apoio aos pequenos negócios da cidade.",
+      "content": "📋 Nova Legislação:\n\n✓ Redução de IPTU em 15% para pequenos negócios\n✓ Linha de crédito com juros reduzidos\n✓ Apoio técnico gratuito do SEBRAE\n✓ Programa de modernização digital\n✓ Validade de 5 anos\n\nBeneficia mais de 800 estabelecimentos.",
+      "date": "2026-08-29T16:00:00-03:00",
+      "category": "politica",
+      "likes": 2345,
+      "comments": 234,
+      "media_type": "image",
+      "hashtags": ["#Economia", "#Comercio", "#RioDasOstras"],
+      "original_post": "https://www.instagram.com/p/lpnewsportal_003/"
+    },
+    {
+      "id": "germanojunior_003",
+      "source": "Germano Junior",
+      "source_url": "https://www.instagram.com/germanojunior343/",
+      "title": "Projeto Social oferece aulas gratuitas de empreendedorismo",
+      "description": "ONGs locais unem forças para oferecer capacitação em empreendedorismo digital para jovens de 18 a 30 anos.",
+      "content": "💼 Programa de Empreendedorismo:\n\nDuração: 12 semanas\nParticipantes: 50 jovens selecionados\nHorário: Terças e quintas - 19h30\n\nMódulos:\n• Marketing digital\n• Gestão financeira\n• Prototipagem\n• Pitch e investimento\n\nInscrições abertas até 5 de setembro",
+      "date": "2026-08-29T14:25:00-03:00",
+      "category": "cultura",
+      "likes": 1678,
+      "comments": 145,
+      "media_type": "image",
+      "hashtags": ["#Empreendedorismo", "#Juventude", "#RioDasOstras"],
+      "original_post": "https://www.instagram.com/p/germanojunior_003/"
+    },
+    {
+      "id": "riodasostras24h_004",
+      "source": "Rio das Ostras 24H",
+      "source_url": "https://www.instagram.com/riodasostras24h/",
+      "title": "Praia de Itapebuna recebe projeto de revitalização",
+      "description": "Primeira fase do projeto de revitalização da Praia de Itapebuna inclui limpeza, drenagem e manutenção de quiosques.",
+      "content": "🏖️ Projeto de Revitalização:\n\n✓ Limpeza profunda da faixa de areia\n✓ Sistema de drenagem atualizado\n✓ Quiosques restaurados e modernizados\n✓ Ciclo de manutenção mensal\n✓ Investimento de R$ 800 mil\n\nFase 2 prevista para novembro de 2026",
+      "date": "2026-08-29T11:45:00-03:00",
+      "category": "turismo",
+      "likes": 3789,
+      "comments": 412,
+      "media_type": "carousel",
+      "hashtags": ["#Praia", "#Revitalizacao", "#RioDasOstras"],
+      "original_post": "https://www.instagram.com/p/riodasostras24h_004/"
+    },
+    {
+      "id": "lpnewsportal_004",
+      "source": "LP News Portal Oficial",
+      "source_url": "https://www.instagram.com/lpnewsportaloficial/",
+      "title": "Concurso Público abre inscrições para 150 vagas",
+      "description": "Prefeitura abre inscrições para concurso público com oportunidades em várias áreas da administração municipal.",
+      "content": "💼 Edital de Concurso Público:\n\nTotal de vagas: 150\nSalários: R$ 2.200 a R$ 6.500\nPrazo de inscrição: 1 a 15 de setembro\nTaxa de inscrição: R$ 85\n\nOportunidades:\n• Agente administrativo (40 vagas)\n• Técnico em TI (15 vagas)\n• Encanador (25 vagas)\n• Eletricista (20 vagas)\n\nMais informações: www.prefeitura-rio-das-ostras.gov.br",
+      "date": "2026-08-28T09:30:00-03:00",
+      "category": "politica",
+      "likes": 4567,
+      "comments": 623,
+      "media_type": "image",
+      "hashtags": ["#ConcursoPublico", "#Emprego", "#RioDasOstras"],
+      "original_post": "https://www.instagram.com/p/lpnewsportal_004/"
+    }
+  ],
+  "statistics": {
+    "totalPosts": 12,
+    "dateRange": {
+      "earliest": "2026-08-28T09:30:00-03:00",
+      "latest": "2026-08-31T14:30:00-03:00"
+    },
+    "byCategory": {
+      "politica": 4,
+      "cultura": 4,
+      "turismo": 2,
+      "esportes": 1,
+      "outros": 1
+    },
+    "bySource": {
+      "Rio das Ostras 24H": 4,
+      "LP News Portal Oficial": 4,
+      "Germano Junior": 4
+    }
+  }
+}
